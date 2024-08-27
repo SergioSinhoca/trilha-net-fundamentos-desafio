@@ -34,5 +34,64 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 4. Encerrar
 
 
-## Solução
+# Solução 
+ Minhas implementações foram feitas para resolver o desafio proposto, aprimorando o sistema com várias melhorias que garantem uma experiência de usuário fluida e robusta.
+
+ **Versão da Plataforma:**   Este projeto foi desenvolvido utilizando a plataforma **.NET versão 8.**
+
+ ## Implementações na Classe `Estacionamento.cs`
+
+### Implementações Requeridas
+
+1 **Adicionar Veículo (`AdicionarVeiculo` método):**
+  
+- **Entrada de Placa:** O usuário é solicitado a inserir a placa do veículo. A placa é validada e, se for válida e não duplicada, é adicionada à lista de veículos estacionados.
+
+- **Validação e Tentativas:** A validação é realizada para garantir que a placa esteja no formato correto e não seja duplicada. O sistema permite até duas tentativas inválidas antes de oferecer a opção de sair.
+
+2 **Remover Veículo (`RemoverVeiculo` método):** 
+
+- **Entrada de Placa:** O usuário é solicitado a inserir a placa do veículo a ser removido.
+
+- **Cálculo do Valor:** A quantidade de horas é solicitada ao usuário, e o valor total é calculado usando a fórmula: `precoInicial + precoPorHora * horas`.
+
+- **Remoção da Placa:** Após calcular o valor total, a placa do veículo é removida da lista de veículos estacionados.
+
+3 **Listar Veículos (ListarVeiculos método):**
+- **Listagem:** O método exibe todos os veículos atualmente estacionados, numerando-os para melhor visualização.
+
+## Implementações na Classe `Program.cs`
+
+### Funções de Inicialização e Validação
+
+**1 Inicialização de Variáveis:**
+
+- **Definição de Preços:** As variáveis precoInicial e precoPorHora são definidas para armazenar os valores iniciais e por hora do estacionamento.
+
+**2 Função LerDecimal:**
+
+- **Entrada de Dados:** Implementada para solicitar e validar a entrada de valores decimais pelo usuário.
+
+- **Validação:** Se a entrada não for válida, o usuário é solicitado a inserir novamente até que um valor decimal válido seja fornecido.
+
+**3 Inicialização do Estacionamento:**
+
+- **Configuração Inicial:** O sistema lê e valida os preços inicial e por hora utilizando a função `LerDecimal` antes de instanciar a classe Estacionamento.
+
+## Implementações Adicionais
+**1 Validação da Placa:**
+
+- **Tentativas e Validação:** Implementado um contador de tentativas e uma validação rigorosa para garantir que a placa inserida esteja no formato correto e não seja duplicada.
+
+- **Formato da Placa:** Utiliza uma expressão regular para garantir que a placa esteja no formato Mercosul: três letras seguidas por um hífen e quatro números `(exemplo: ABC-1234)`.
+
+ **2 Tratamento de Erros e Saída do Menu:**
+
+- **Verificação de Entrada:** Implementado tratamento para verificar se as entradas são números válidos e exibir mensagens de erro apropriadas se a entrada for inválida.
+
+- **Saída do Processo de Adição:** Permite que o usuário saia do processo de adição de veículo pressionando a tecla 4 após exceder o número de tentativas.
+
+**3 Melhorias na Interação com o Usuário:**
+
+- **Mensagens Informativas:** Adicionadas mensagens para informar ao usuário sobre a validação da placa, erros, e o resultado das operações `(adição, remoção e listagem de veículos)`.
 
