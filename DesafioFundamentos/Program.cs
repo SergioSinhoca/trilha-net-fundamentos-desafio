@@ -3,15 +3,40 @@
 // Coloca o encoding para UTF8 para exibir acentuação
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
+// -- Define o preço inicial do estacionamento --
 decimal precoInicial = 0;
+// -- Define o preço por hora do estacionamento --
 decimal precoPorHora = 0;
 
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
-                  "Digite o preço inicial:");
-precoInicial = Convert.ToDecimal(Console.ReadLine());
+// -- Função para ler e validar decimal --
+decimal LerDecimal(string mensagem)
+{   
+    // -- Declara uma variável para armazenar o valor decimal --
+    decimal valor;
+    // -- Declara uma variável para armazenar a entrada do usuário --
+    string entrada;
 
-Console.WriteLine("Agora digite o preço por hora:");
-precoPorHora = Convert.ToDecimal(Console.ReadLine());
+    // -- Loop para continuar pedindo entrada até que seja válida
+    while (true)
+    {
+        Console.WriteLine(mensagem);
+        entrada = Console.ReadLine();
+
+        // -- Tenta converter a entrada para um valor decimal
+        if (decimal.TryParse(entrada, out valor))
+        {
+            return valor;
+        }
+
+        Console.WriteLine("Entrada inválida. Por favor, digite um número decimal válido.");
+    }
+}
+
+Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n");
+// - explique..
+precoInicial = LerDecimal("Digite o preço inicial:");
+// - explique..
+precoPorHora = LerDecimal("Agora digite o preço por hora:");
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
 Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
