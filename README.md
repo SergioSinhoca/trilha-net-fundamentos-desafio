@@ -95,3 +95,12 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 
 - **Mensagens Informativas:** Adicionadas mensagens para informar ao usuário sobre a validação da placa, erros, e o resultado das operações `(adição, remoção e listagem de veículos)`.
 
+## Demonstração do Sistema
+
+Aqui está uma breve demonstração em vídeo do sistema de estacionamento em ação:
+
+Este vídeo ilustra como adicionar veículos, remover veículos e listar os veículos estacionados, mostrando a interface do usuário e as interações principais.
+
+ <p align="center">
+    <img src="video.gif">
+ </p>
